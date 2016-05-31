@@ -17,7 +17,7 @@
 	$.widget("ui.triggeredAutocomplete", $.extend(true, {}, $.ui.autocomplete.prototype, {
 		
 		options: {
-			trigger: "@",
+			trigger: "#",
 			allowDuplicates: true,
 			maxLength: 0
 		},
@@ -146,8 +146,8 @@
 			var check_contents = contents.substring(contents.lastIndexOf(this.options.trigger) - 1, cursorPos);
 			var regex = new RegExp('\\B\\'+this.options.trigger+'([\\w\\-]+)');
 
-			if (contents.indexOf(this.options.trigger) >= 0 && check_contents.match(regex)) {
-
+			//if (contents.indexOf(this.options.trigger) >= 0 && check_contents.match(regex)) {
+			if (contents.indexOf(this.options.trigger) >= 0) {
 				// Get the characters following the trigger and before the cursor position.
 				// Get the contents up to the cursortPos first then get the lastIndexOf the trigger to find the search term.
 
